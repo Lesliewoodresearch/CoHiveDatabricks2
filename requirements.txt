@@ -1,0 +1,17 @@
+# Python dependencies for CoHive Databricks App
+# Backend API for loading files from Databricks into Research Synthesis
+
+# Databricks SDK for file system access (workspace files, DBFS, Unity Catalog volumes)
+databricks-sdk>=0.18.0
+
+# Web framework for backend API endpoints
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# File handling and utilities
+python-multipart>=0.0.6
+
+# Additional recommended dependencies
+python-dotenv>=1.0.0  # For environment variable management
+gunicorn>=21.2.0      # Production WSGI server (better than Flask dev server)
+werkzeug>=3.0.0       # Flask dependency, explicit version for security

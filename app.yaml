@@ -1,0 +1,41 @@
+name: CoHive
+description: AI tool interface with hexagonal breadcrumb navigation for Databricks workflows
+
+command:
+  - sh
+  - -c
+  - |
+    # Install Python dependencies
+    pip install -r requirements.txt
+    
+    # Install Node dependencies
+    npm install
+    
+    # Build React app for production
+    npm run build
+    
+    # Start Flask API with Gunicorn in background
+    cd api && gunicorn -w 2 -b 0.0.0.0:5000 databricks_files:app --daemon && cd ..
+    
+    # Serve the built React app
+    npx serve -s dist -l 8080
+
+port: 8080
+
+env:
+  - name: NODE_ENV
+    value: production
+  - name: VITE_DATABRICKS_ENABLED
+    value: "true"
+  - name: API_PORT
+    value: "5000"
+  - name: PYTHONUNBUFFERED
+    value: "1"
+  - name: DATABRICKS_HOST
+    value: "${DATABRICKS_HOST}"
+  - name: DATABRICKS_TOKEN
+    value: "${DATABRICKS_TOKEN}"
+
+resources:
+  memory: 4Gi
+  cpu: 2
