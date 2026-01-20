@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   # CoHiveToDatabricks3
 
@@ -9,3 +10,7 @@
 
   Run `npm run dev` to start the development server.
   
+=======
+# CoHiveDatabricks2
+CoHive Git Repository to Databricks-attempt 2
+>>>>>>> 24008113d198e6958212c0a9f26394548127bd02
