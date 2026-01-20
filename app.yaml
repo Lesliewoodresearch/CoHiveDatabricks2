@@ -22,7 +22,7 @@ command:
     sleep 2
     
     # Serve the built React app
-    npx serve -s dist -l 8080
+    npx serve -s build -l 8080
 
 # Port configuration
 port: 8080
